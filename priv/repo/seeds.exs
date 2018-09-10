@@ -10,12 +10,9 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-
+alias UniversityAccomodation.{Repo, Student,StudentHouse}
 UniversityAccomodation.Repo.insert!(%UniversityAccomodation.Student{matricula: "2016601314",name: "Noe",last_name: "Perez",address: "Jose Maria Facha No.2066"})
-UniversityAccomodation.Repo.insert!(%UniversityAccomodation.StudentHouse{name: "Black House",adress: "Jose Maria Facha No.2066",phone_number: "5519601039"})
-UniversityAccomodation.Repo.insert!(%UniversityAccomodation.StudentHouseDormitory{dormitory_number: "101",hire: 1000})
-UniversityAccomodation.Repo.insert!(%UniversityAccomodation.StudentHouseDormitory{dormitory_number: "102",hire: 1200})
-UniversityAccomodation.Repo.insert
+
 
 room = %UniversityAccomodation.Dormitory.StudentHouseDormitory{dormitory_number: "101",hire: 1000}
 room2 = %UniversityAccomodation.Dormitory.StudentHouseDormitory{dormitory_number: "102",hire: 1000}
@@ -29,7 +26,7 @@ student_house = %UniversityAccomodation.StudentHouse{name: "White House",address
 director = %UniversityAccomodation.Staff.Employee{address: "Juan Sarabia No.2066",birth_date: ~D[1985-01-01],charge: "Director",gender: "M",last_name: "Yedra",location: "Student House",name: "Jose",student_house: student_house}
 UniversityAccomodation.Repo.insert!(director)
 
-alias UniversityAccomodation.{Repo, Student,StudentHouse}
+
 room_to_assign = Repo.get(UniversityAccomodation.Dormitory.StudentHouseDormitory,1)
 student = Repo.get(Student,1)
 student_changeset = student|> Repo.preload(:dormitory) |> Ecto.Changeset.change
