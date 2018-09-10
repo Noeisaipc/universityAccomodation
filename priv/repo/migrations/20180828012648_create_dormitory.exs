@@ -9,6 +9,6 @@ defmodule UniversityAccomodation.Repo.Migrations.CreateDormitory do
     end
 
 
-
+    create index(:dormitories, [:student_id])
   end
 end

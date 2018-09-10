@@ -4,7 +4,7 @@ defmodule UniversityAccomodation.Repo.Migrations.CreateStudentHouse do
   def change do
     create table(:student_houses) do
       add :name, :string
-      add :adress, :string
+      add :address, :string
       add :phone_number, :string
     end
   end

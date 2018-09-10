@@ -6,6 +6,6 @@ defmodule UniversityAccomodation.Repo.Migrations.DormitoryBelongsToStudentHouse 
       add :student_house_id, references(:student_houses)
     end
 
-    create index(:dormitories, [:student_id])
+    create index(:dormitories, [:student_house_id])
   end
 end
