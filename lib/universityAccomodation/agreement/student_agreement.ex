@@ -1,6 +1,8 @@
-defmodule UniversityAccomodation.Agreement do
+defmodule UniversityAccomodation.Agreement.StudentAgreement do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
+
 
 
   schema "agreements" do
@@ -8,7 +10,7 @@ defmodule UniversityAccomodation.Agreement do
     field :date_to_arrival, :date
     field :date_to_leave, :date
     belongs_to :student , UniversityAccomodation.Student
-    belongs_to :dormitory, UniversityAccomodation.Dormitory
+    belongs_to :dormitory, UniversityAccomodation.Dormitory.StudentHouseDormitory
   end
 
   @doc false
@@ -16,6 +18,13 @@ defmodule UniversityAccomodation.Agreement do
     agreement
     |> cast(attrs, [:booking_time, :date_to_arrival, :date_to_leave])
     |> validate_required([:booking_time, :date_to_arrival, :date_to_leave])
+  end
+
+
+  def getAgreementsSumer do
+    query = from a in UniversityAccomodation.Agreement.StudentAgreement,
+        where: a.booking_time >= 2
+    UniversityAccomodation.Repo.all(query)
   end
 
 end

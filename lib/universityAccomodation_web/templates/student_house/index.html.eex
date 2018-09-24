@@ -1,0 +1,42 @@
+<%= for students_house <- @students_houses do %>
+    <h2>Residencia</h2>
+    <ul>
+
+    <li>
+        <strong>Nombre:</strong>
+        <%= students_house.name %> 
+    </li>
+
+    <li>
+
+        <strong>Telefono:</strong>
+        <%= students_house.phone_number %>
+    </li>
+    <li>
+        <h3>Cuartos Asignados a:</h3>
+        <%= for dormitory <- students_house.dormitory do %>
+        <ul>
+            <li>
+                <h4>Alumno: <%=dormitory.student.name%> <%=dormitory.student.last_name%></h4>
+                <ul>
+                    <li>
+                    <strong>Matricula:</strong>
+                    <%=dormitory.student.matricula%>
+                    </li>
+                    <li>
+                    <strong>Id del cuarto:</strong>
+                    <%= dormitory.id%>
+                    </li>
+                    <li>
+                    <strong>No. de cuarto:</strong>
+                    <%= dormitory.dormitory_number%>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <%end%>
+    </li>
+    
+
+    </ul>
+<%end%>

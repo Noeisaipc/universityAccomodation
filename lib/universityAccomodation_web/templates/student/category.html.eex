@@ -1,0 +1,19 @@
+<h2>Estudiantes sin un pariente asignado</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nivel</th>
+      <th>No. de alumnos</th>
+      <th></th>
+    </tr>
+  </thead>
+<tbody>
+
+<%= for category <- @categories do %>
+    <tr>
+      <td><%= Enum.at(category,0) %></td>
+      <td><%= Enum.at(category,1) %></td>
+    </tr>
+<% end %>
+</tbody>
+</table>

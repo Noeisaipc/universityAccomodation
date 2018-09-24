@@ -1,0 +1,21 @@
+<h2>Estudiantes sin habitación</h2>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Matricula</th>
+      <th>Last Name</th>
+      <th>Name</th>
+      <th></th>
+    </tr>
+  </thead>
+<tbody>
+
+<%= for student <- @students do %>
+    <tr>
+      <td><%= student.matricula %></td>
+      <td><%= student.last_name %></td>
+      <td><%= student.name %></td>
+    </tr>
+<% end %>
+</tbody>
+</table>

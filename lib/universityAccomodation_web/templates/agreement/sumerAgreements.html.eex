@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        <h1>Contratos Vijentes en verano</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+        <h4>Pisos de estudiantes</h4><br>
+        <%= for agreement <- @flat do %>
+            <ul>
+                <li>
+                    <strong>No. de Contrato:</strong>
+                    <%= agreement.id %> 
+                </li>
+                <ul>
+                    <li>
+                    <strong>Semestres Alquilados:</strong>
+                    <%= agreement.booking_time %>
+                    </li>
+                    <li>
+                    <strong>Fecha de Llegada:</strong>
+                    <%= agreement.date_to_arrival %>
+                    </li>
+                    <li>
+                    <strong>Fecha de Salida:</strong>
+                    <%= agreement.date_to_leave %>
+                    </li>
+                </ul>
+            </ul>
+        <% end %>
+        </div>
+        <div class="col-sm">
+        <h4>Pisos de estudiantes</h4><br>
+        <%= for agreement <- @studenthouse do %>
+        <ul>
+            <li>
+                <strong>No. de Contrato:</strong>
+                <%= agreement.id %> 
+            </li>
+            <ul>
+                <li>
+                <strong>Semestres Alquilados:</strong>
+                <%= agreement.booking_time %>
+                </li>
+                <li>
+                <strong>Fecha de Llegada:</strong>
+                <%= agreement.date_to_arrival %>
+                </li>
+                <li>
+                <strong>Fecha de Salida:</strong>
+                <%= agreement.date_to_leave %>
+                </li>
+            </ul>
+        </ul>
+        <% end %>
+        </div>
+    </div>
+</div>

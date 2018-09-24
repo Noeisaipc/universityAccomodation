@@ -1,0 +1,5 @@
+<%= for money <- @money do %>
+    <div class="alert alert-success" role="alert">
+    <h4>La matricula <%= @matricula %> a pagado  : </h4> <h5><%= money %> usd</h5>
+    </div>
+<%end%>

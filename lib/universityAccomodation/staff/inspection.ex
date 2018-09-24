@@ -1,6 +1,7 @@
 defmodule UniversityAccomodation.Staff.Inspection do
   use Ecto.Schema
   import Ecto.Changeset
+  import Ecto.Query
 
 
   schema "inspections" do
@@ -17,4 +18,12 @@ defmodule UniversityAccomodation.Staff.Inspection do
     |> cast(attrs, [:inspection_date, :indicator, :comment])
     |> validate_required([:inspection_date, :indicator, :comment])
   end
+
+  def getBadInspectons do
+    query = from i in UniversityAccomodation.Staff.Inspection,
+      where: i.indicator == false,
+      preload: [:employee,:flat]
+    UniversityAccomodation.Repo.all(query)
+  end
+
 end

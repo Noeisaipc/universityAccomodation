@@ -1,0 +1,9 @@
+<%= form_for @conn, bill_path(@conn, :schearch_user_amoutn_paid), [as: :busqueda], fn f -> %> 
+ 
+  <div class="form-group mx-sm-3 mb-2">
+    <label for="inputPassword2" class="sr-only">Password</label>
+    <%= text_input f, :matricula, placeholder: "Matricula", class: "form-control" %>
+  </div>
+  <%= submit "Buscar", class: "btn btn-primary mb-2" %> 
+
+<% end %>

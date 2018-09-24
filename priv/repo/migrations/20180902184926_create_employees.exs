@@ -10,6 +10,7 @@ defmodule UniversityAccomodation.Repo.Migrations.CreateEmployees do
       add :gender, :string
       add :charge, :string
       add :location, :string
+      add :phone_number, :string
     end
 
   end

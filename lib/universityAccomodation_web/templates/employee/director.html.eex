@@ -1,0 +1,21 @@
+<%= for director <- @directors do %>
+    <h2>Director</h2>
+    <ul>
+
+    <li>
+        <strong>Nombre:</strong>
+        <%= director.last_name %> <%= director.name %> 
+    </li>
+
+    <li>
+        <strong>Telefono:</strong>
+        <%= director.phone_number %>
+    </li>
+    <li>
+        <strong>Residencia a cargo:</strong>
+        <%=director.student_house.name%>
+    </li>
+
+    </ul>
+
+<% end %>

@@ -1,0 +1,34 @@
+<%= for student <- @students do %>
+    <h2>Estudiante</h2>
+    <ul>
+
+    <li>
+        <strong>Nombre:</strong>
+        <%= student.last_name %> <%= student.name %> 
+    </li>
+
+    <li>
+        <strong>Telefono:</strong>
+        <%= student.phone_number %>
+    </li>
+    <li>
+        
+        <h3>Contrato No: <%=student.agreement.id%></h3>
+        <ul>
+            <li>
+            <strong>Semestres Alquilados:</strong>
+            <%= student.agreement.booking_time %>
+            </li>
+            <li>
+            <strong>Fecha de Llegada:</strong>
+            <%= student.agreement.date_to_arrival %>
+            </li>
+            <li>
+            <strong>Fecha de Salida:</strong>
+            <%= student.agreement.date_to_leave %>
+            </li>
+        </ul>
+    </li>
+
+    </ul>
+<%end%>

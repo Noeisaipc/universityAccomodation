@@ -1,0 +1,28 @@
+
+<h1> Reportes de Pisos de estudiantes en malas condiciones</h1>
+<div class="accordion" id="accordionExample">
+
+    <%= for inspection <- @inspections do %>
+    <div class="card">
+        <div class="card-header" id="<%= inspection.id %>">
+        <h5 class="mb-0">
+            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#detail<%= inspection.id %>" aria-expanded="false" aria-controls="collapseOne">
+            Reporte Numero: <%= inspection.id %>
+            </button>
+        </h5>
+        </div>
+
+        <div id="detail<%= inspection.id %>" class="collapse" aria-labelledby="<%= inspection.id %>" data-parent="#accordionExample">
+        <div class="card-body">
+            <strong>Identificador del Piso:</strong><%= inspection.flat.id %><br>
+            <strong>Dirección:</strong> <%= inspection.flat.address %><br>
+            <strong>Fecha de la inspeción: </strong><%= inspection.inspection_date%><br>
+            <strong>Comentarios: </strong><br>
+            <%= inspection.comment %>
+            
+        </div>
+        </div>
+    </div>
+    <% end %>
+
+</div>
